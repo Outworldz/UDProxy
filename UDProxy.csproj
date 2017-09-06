@@ -8,7 +8,7 @@
     <ProjectGuid>{5FAA859F-8032-48FC-A7CF-F735A3246E5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimPlaza.UDProxy</RootNamespace>
+    <RootNamespace>Outworldz.UDProxy</RootNamespace>
     <AssemblyName>UDProxy</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -67,6 +67,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="UDProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Netcode\SOCKS5Packets.cs" />
@@ -75,6 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\IconApp.ico" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\IconTray.ico" />
   </ItemGroup>
   <ItemGroup>

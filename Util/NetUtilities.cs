@@ -18,7 +18,7 @@ namespace SimPlaza.UDProxy
 
             try
             {
-                request = HttpWebRequest.Create("http://whatismyip.org/");
+                request = HttpWebRequest.Create("https://api.ipify.org");
                 request.Method = "GET";
                 response = request.GetResponse();
 

@@ -27,18 +27,9 @@ namespace SimPlaza.UDProxy
         {
             // Set up console
             Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-            Console.WriteLine(@"
-`..     `..`.....    `.......                                     
-`..     `..`..   `.. `..    `..                                   
-`..     `..`..    `..`..    `..`. `...   `..    `..   `..`..   `..
-`..     `..`..    `..`.......   `..    `..  `..   `. `..  `.. `.. 
-`..     `..`..    `..`..        `..   `..    `..   `.       `...  
-`..     `..`..   `.. `..        `..    `..  `..  `.  `..     `..  
-  `.....   `.....    `..       `...      `..    `..   `..   `..   
-                             SIMPL -  Major Rasputin 2012  `..    
-__________________________________________________________________");
+            Console.WriteLine(@"Outworldz Loopback Server");
 
             // Load configuration
             gConfiguration = new Configuration(args);
