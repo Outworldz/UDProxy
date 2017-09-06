@@ -11,7 +11,7 @@ namespace SimPlaza.UDProxy
         public static Connection gConnection;
         public static Configuration gConfiguration;
         //public static NotifyIcon gTrayIcon;
-        public static bool lol;
+        
         private static TcpListener gTCP;
         private static Array fCols;
         private static Random fRand;
@@ -29,7 +29,7 @@ namespace SimPlaza.UDProxy
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-            Console.WriteLine(@"Outworldz Loopback Server");
+            Console.WriteLine(@"Outworldz UDP Loopback Server");
 
             // Load configuration
             gConfiguration = new Configuration(args);
@@ -53,48 +53,31 @@ namespace SimPlaza.UDProxy
 
         public static void Debug(string cls, string msg, DebugLevels level)
         {
-            if ( UDProxy.lol )
-            {
-                if (fRand == null) fRand = new Random(69);
-                if (fCols == null) fCols = Enum.GetValues(typeof(ConsoleColor));
-                ConsoleColor color;
-
-                do
-                {
-                    color = (ConsoleColor)fCols.GetValue(fRand.Next(fCols.Length));
-                } while (color == ConsoleColor.DarkRed);
-
-                Console.ForegroundColor = color;
-                Console.WriteLine(cls + " | " + msg);
-            }
-            else
-            {
-                Console.ForegroundColor = (ConsoleColor)level;
-                Console.Write(cls);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(" | " + msg);
-            }
+            Console.ForegroundColor = (ConsoleColor)level;
+            Console.Write(cls);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" | " + msg);
         }
 
-            public static void DebugInfo(string cls, string msg)
-            {
-                Debug(cls, msg, DebugLevels.Info);
-            }
+        public static void DebugInfo(string cls, string msg)
+        {
+            Debug(cls, msg, DebugLevels.Info);
+        }
 
-            public static void DebugWarn(string cls, string msg)
-            {
-                Debug(cls, msg, DebugLevels.Warn);
-            }
+        public static void DebugWarn(string cls, string msg)
+        {
+            Debug(cls, msg, DebugLevels.Warn);
+        }
 
-            public static void DebugError(string cls, string msg)
-            {
-                Debug(cls, msg, DebugLevels.Error);
-            }
+        public static void DebugError(string cls, string msg)
+        {
+            Debug(cls, msg, DebugLevels.Error);
+        }
 
-            public static void DebugException(Exception e)
-            {
-                Debug(e.Source, e.Message, DebugLevels.Error);
-            }
+        public static void DebugException(Exception e)
+        {
+            Debug(e.Source, e.Message, DebugLevels.Error);
+        }
 
         #endregion
     }

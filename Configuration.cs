@@ -25,9 +25,6 @@ namespace SimPlaza.UDProxy
         {
             Args = args;
 
-            if (Array.IndexOf(args, "--fab") > -1)
-                UDProxy.lol = true;
-
             if (Config["MyExternalIP"] == null)
                 Config["MyExternalIP"] = NetUtilities.GetExternalIP();
 
